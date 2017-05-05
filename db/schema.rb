@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170419064837) do
+ActiveRecord::Schema.define(version: 20170505065830) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "customer_id"
@@ -47,6 +47,14 @@ ActiveRecord::Schema.define(version: 20170419064837) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "listing_item_components", force: :cascade do |t|
+    t.integer "listing_item_id"
+    t.integer "stock_keeping_unit_id"
+    t.integer "quantity"
+    t.index ["listing_item_id"], name: "index_listing_item_components_on_listing_item_id"
+    t.index ["stock_keeping_unit_id"], name: "index_listing_item_components_on_stock_keeping_unit_id"
+  end
+
   create_table "listing_items", force: :cascade do |t|
     t.string   "name"
     t.integer  "listing_id"
@@ -54,13 +62,6 @@ ActiveRecord::Schema.define(version: 20170419064837) do
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
     t.index ["listing_id"], name: "index_listing_items_on_listing_id"
-  end
-
-  create_table "listing_items_stock_keeping_units", force: :cascade do |t|
-    t.integer "listing_item_id"
-    t.integer "stock_keeping_unit_id"
-    t.index ["listing_item_id"], name: "listing_item_id"
-    t.index ["stock_keeping_unit_id"], name: "stock_keeping_unit_id"
   end
 
   create_table "listings", force: :cascade do |t|
