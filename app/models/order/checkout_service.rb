@@ -42,4 +42,17 @@ class Order::CheckoutService
     calc = Order::TotalCalculator.new(@order)
     @order.update!(item_total: calc.item_total, shipping_cost: calc.shipping_cost, total: calc.total)
   end
+
+  def set_shipping_address(address_id: nil)
+    raise if address_id.nil?
+
+    address = @order.customer.addresses.find_by_id(address_id)
+    return Response.new(:cannot_find_address) if address.nil?
+
+    shipping_address = @order.shipping_address || @order.build_shipping_address
+    shipping_address.update(address.to_address_data)
+
+    return Response.new(:success)
+  end
+
 end

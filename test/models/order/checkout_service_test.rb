@@ -45,4 +45,17 @@ class Order::CheckoutServiceTest < ActiveSupport::TestCase
 
     assert_equal 0, order.item_total
   end
+
+  test "set shipping address" do
+    order = Order.create(customer: customers(:ashen_one))
+    service = Order::CheckoutService.new(order)
+
+    response = service.set_shipping_address(address_id: 0)
+    assert_not response.success?
+
+    response = service.set_shipping_address(address_id: addresses(:gz).id)
+    assert response.success?
+
+    assert_equal addresses(:gz).to_address_data, order.reload.shipping_address.to_address_data
+  end
 end

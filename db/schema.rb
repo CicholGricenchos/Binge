@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170505065830) do
+ActiveRecord::Schema.define(version: 20170512085113) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "customer_id"
@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 20170505065830) do
     t.string   "phone"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "type"
     t.index ["order_id"], name: "index_order_addresses_on_order_id"
   end
 
@@ -122,6 +123,7 @@ ActiveRecord::Schema.define(version: 20170505065830) do
     t.integer  "package_id"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.integer  "quantity"
     t.index ["package_id"], name: "index_package_items_on_package_id"
   end
 
