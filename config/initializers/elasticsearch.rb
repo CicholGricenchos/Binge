@@ -1,0 +1,1 @@
+$ELASTICSEARCH_CLIENT = Elasticsearch::Client.new url: 'http://elastic:changeme@localhost:9200'
