@@ -3,7 +3,8 @@ module Listing::Searchable
 
   def search_data
     {
-      name: name
+      name: name,
+      introduction: introduction
     }
   end
 

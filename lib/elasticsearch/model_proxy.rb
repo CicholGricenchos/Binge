@@ -34,6 +34,8 @@ class Elasticsearch::ModelProxy
     unless keep_old
       clean_indices
     end
+
+    index_name
   end
 
   def create_index

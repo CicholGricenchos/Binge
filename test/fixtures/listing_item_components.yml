@@ -4,12 +4,12 @@ ember:
   stock_keeping_unit: ember
   quantity: 1
 
-gold_pine_rasin:
-  listing_item: pine_rasin
-  stock_keeping_unit: gold_pine_rasin
+gold_pine_resin:
+  listing_item: pine_resin
+  stock_keeping_unit: gold_pine_resin
   quantity: 1
 
 charcoal_pine_resin:
-  listing_item: pine_rasin
+  listing_item: pine_resin
   stock_keeping_unit: charcoal_pine_resin
   quantity: 1

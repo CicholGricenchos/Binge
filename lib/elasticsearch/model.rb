@@ -3,8 +3,6 @@ module Elasticsearch::Model
   extend ActiveSupport::Concern
 
   included do
-    extend ClassMethods
-
     after_commit on: [:create, :update] do
       __elasticsearch__.reindex_record self
     end
@@ -14,13 +12,25 @@ module Elasticsearch::Model
     end
   end
 
-  module ClassMethods
+  class_methods do
     def __elasticsearch__
       @@__elasticsearch__ ||= Elasticsearch::ModelProxy.new self
+    end
+
+    def index_data
+      {}
     end
   end
 
   def __elasticsearch__
     self.class.__elasticsearch__
+  end
+
+  def should_index?
+    true
+  end
+
+  def search_data
+    {}
   end
 end

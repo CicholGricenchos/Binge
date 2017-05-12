@@ -1,8 +1,10 @@
 
-pine_rasin:
-  listing: pine_rasin
-  name: Pine rasin
+pine_resin:
+  listing: pine_resin
+  name: Pine resin
+  price: 10
 
 ember:
   listing: ember
   name: Ember
+  price: 25
