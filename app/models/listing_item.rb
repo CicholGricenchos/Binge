@@ -15,3 +15,19 @@ class ListingItem < ApplicationRecord
     end.min
   end
 end
+
+# == Schema Information
+#
+# Table name: listing_items
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  listing_id :integer
+#  price      :decimal(8, 2)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+# Indexes
+#
+#  index_listing_items_on_listing_id  (listing_id)
+#

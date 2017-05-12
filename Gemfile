@@ -57,3 +57,4 @@ gem 'closure_tree'
 
 gem 'elasticsearch', '~> 5.0'
 gem 'redlock'
+gem 'annotate'
