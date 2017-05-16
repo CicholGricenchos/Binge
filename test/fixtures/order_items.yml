@@ -7,7 +7,7 @@
 
 pine_resin_and_ember__pine_resin:
   order: pine_resin_and_ember
-  listing_item: pine_resin
+  listing_item: pine_resin_pack
   unit_price: 10
   quantity: 2
 
@@ -15,4 +15,10 @@ pine_resin_and_ember__ember:
   order: pine_resin_and_ember
   listing_item: ember
   unit_price: 25
+  quantity: 3
+
+pine_resin_and_ember__gold_pine_resin:
+  order: pine_resin_and_ember
+  listing_item: gold_pine_resin
+  unit_price: 7
   quantity: 3

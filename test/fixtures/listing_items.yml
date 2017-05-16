@@ -1,10 +1,15 @@
 
-pine_resin:
+pine_resin_pack:
   listing: pine_resin
-  name: Pine resin
+  name: Pine resin Pack
   price: 10
 
 ember:
   listing: ember
   name: Ember
   price: 25
+
+gold_pine_resin:
+  listing: pine_resin
+  name: Gold Pine Resin
+  price: 7

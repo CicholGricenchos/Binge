@@ -8,13 +8,12 @@ class Order::PackageServiceTest < ActiveSupport::TestCase
     service.generate_packages
     package_items = order.reload.package_items
 
-    component_hash = order.order_items.map do |item|
-      item.listing_item.components.map do |sku, qty|
-        [sku, qty * item.quantity]
-      end
-    end.reduce(:concat).to_h
-
-    assert package_items.map{|x| component_hash[x.stock_keeping_unit] == x.quantity }.all?(&:itself)
+    quantity_hash = package_items.map{|x| [x.stock_keeping_unit, x.quantity]}.to_h
+    assert_equal({
+      stock_keeping_units(:ember) => 3,
+      stock_keeping_units(:gold_pine_resin) => 5,
+      stock_keeping_units(:charcoal_pine_resin) => 2
+    }, quantity_hash)
   end
 
 end

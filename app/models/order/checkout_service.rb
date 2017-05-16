@@ -55,4 +55,15 @@ class Order::CheckoutService
     return Response.new(:success)
   end
 
+  def perform_payment
+    payment_service = Order::PaymentService.new(@order)
+    response = payment_service.perform
+
+    if response.success?
+      Order::PackageService.new(@order).generate_packages
+    end
+
+    response
+  end
+
 end
