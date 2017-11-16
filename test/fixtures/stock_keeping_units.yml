@@ -10,3 +10,7 @@ gold_pine_resin:
 charcoal_pine_resin:
   name: Charcoal Pine Resin
   model: charcoal_pine_resin
+
+necronomicon:
+  name: Book of Undead
+  model: necronomicon

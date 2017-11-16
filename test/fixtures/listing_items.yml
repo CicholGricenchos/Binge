@@ -13,3 +13,8 @@ gold_pine_resin:
   listing: pine_resin
   name: Gold Pine Resin
   price: 7
+
+necronomicon:
+  listing: necronomicon
+  name: Necronomicon
+  price: 10

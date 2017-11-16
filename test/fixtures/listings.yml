@@ -6,3 +6,7 @@ ember:
 pine_resin:
   name: Pine resin
   introduction: apply buff to weapon
+
+necronomicon:
+  name: Necronomicon
+  introduction: Book of Undead

@@ -18,3 +18,8 @@ charcoal_pine_resin:
   stock_keeping_unit: charcoal_pine_resin
   warehouse: firelink_shrine
   on_hand: 100
+
+necronomicon:
+  stock_keeping_unit: necronomicon
+  warehouse: antarctica
+  on_hand: 1
